@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Student Panel - Event Management System </title>
+
+    <script src="navBar.js"></script>
+    <script src="newStudent.js"></script>
+    <link rel="stylesheet" href="navAndFooter.css">
+    <link rel="stylesheet" href="newStudent.css">
+    <link rel="stylesheet" href="logAndSign.css">
+    <link rel="stylesheet" href="newProfile.css">
+    <link rel="stylesheet" href="userNotification.css">
+</head>
+
+<body>
+
+    <div id="navbar" style="display: none;"> <!--navbar -->
+        <div class="logo"> <!--div for logo inside navbar -->
+            <img src="logo.png" class="logo">
+        </div>
+
+        <div class="collegeName">
+			COLLEGE OF TECHNOLOGY
+		</div>
+
+        <div class="Menu"> <!--div for menu inside navbar -->
+            <img src="menu2.png"  id="menu" onclick="navDropDown()" height="30px" width="25px" title="Menu" class="menuIcon ">           
+        </div>
+	</div>
+
+    <br>
+
+    <div id="dropdown"> <!--div for nav dropdown-->
+
+        <ul id="dropdownList"> 
+            <li> <a href="newHome.html"> <img src="home.png" height="15px" width="15px"> HOME </a> </li> <br> 
+            <li> <a href="newEvents.html"> <img src="grid.png" height="15px" width="15px"> EVENTS </a></li><br>
+            <li> <a href="newGallery.html"> <img src="gallery.png" height="15px" width="15px"> GALLERY </a></li><br>
+
+            <li> <a href="#" onclick="studentOptions(); displayLogIn(); return false;"> <img src="user.png" height="15px" width="15px"> STUDENT PANEL▼</a>
+                    <div id="studentList"> <br>
+                         <a href="#" onclick="displayStudentDashboard()"> Dashboard </a>  <br><br>
+                         <a href="#" onclick="displayStudentNotification()"> Notification </a>  <br><br>
+                         <a href="#" onclick="displayStudentProfile()"> Student Profile </a>  <br>
+                    </div>    
+            </li> <br>
+
+            <li> <a href="newAdmin.html"> <img src="admin.png" height="15px" width="15px"> ADMIN PANEL▼</a> </li>
+        </ul>
+    </div>
+
+    <a name="backToTop"></a>
+
+<!-- -------------------------------------------------------------------- LOGIN FORM ------------------------------------------------------------------------------- -->
+    
+    <div id="mainDiv">
+
+        <div class="picDiv"> <!-- left div -->
+            <img id="pic" src="logo.png" >
+        </div>
+
+        <div id="rightDiv"> <!--right div-->
+
+            <div id="logIn"> <!-- login section --> 
+                <center> 
+                <form id="form">
+                    <h1>LOG IN</h1>
+                    <input id="inputFieldUser" type="text" placeholder="Index Number"> <br><br>
+                    <input id="inputFieldPass" type="password" placeholder="Password"> <br><br>
+                    <input type="checkbox">Remember Me 
+                    <a href="#" style="margin-left: 100px;">Forgot Password?</a> <br><br><br>
+
+                    <a href="#" id="startBtn" onclick="login()">GET STARTED</a> <br><br>
+                    
+                    <p style="font-size: 15px;"> Don't have an account? </p>
+                    <a href="#" onclick="displaySignUp()" style="font-size: 12px;"> Create account</a>
+                </form>
+                </center>
+            </div> <!-- end of login section -->
+        
+
+
+            <div id="signUp" style="display: none;"> <!--sign up section | all 3 divs in column format-->
+
+                <div> <h1> Create Your Account </h1> </div> <br> <!--heading div-->
+
+                <div id="signUpForm"> <!--form div | 2 divs in row format-->
+
+                    <div> <!--form div 1-->
+                        <input id="signUpInput" type="text" placeholder="First Name" > <br><br>
+                        <input id="signUpInput" type="email" placeholder="Email" > <br><br>
+                        <input id="signUpInput" type="password" placeholder="Password" > <br><br>
+                        <input id="signUpInput" type="text" placeholder="Phone Number" > <br><br>
+                        <input id="signUpInput" type="text" placeholder="Year of study" > <br><br>
+                    </div>
+
+                    <div> <!--form div 2-->
+                        <input id="signUpInput" type="password" placeholder="Last Name" > <br><br>
+                        <input id="signUpInput" type="email" placeholder="Confirm Email" > <br><br>
+                        <input id="signUpInput" type="password" placeholder="Confirm Password" > <br><br>
+                        <input id="signUpInput" type="text" placeholder="Address" > <br><br>
+                        <input id="signUpInput" type="text" placeholder="Department" > <br><br>
+                    </div>
+
+                </div> <!--end of form div-->
+
+                <div id="signUpBtn"> SIGN UP </div> <!--button div -->
+
+                <p style="text-align: center;"> or <a href="#" onclick="displayLogIn()" style="text-align: center;"> LogIn</a> </p>
+                
+
+            </div> <!--end of sign up section-->
+        </div> <!--end of right div-->
+    </div> <!--end of main div-->
+
+
+    <script>
+
+        function displaySignUp()
+        {
+            document.getElementById('signUp').style.display='flex';
+            document.getElementById('logIn').style.display='none';
+        }
+
+        function displayLogIn()
+        {
+            if(document.getElementById('logIn').style.display=='none')
+            {
+                document.getElementById('logIn').style.display='block';
+                document.getElementById('signUp').style.display='none';
+            }
+        }
+
+        function login() 
+        {
+            const user = document.getElementById("inputFieldUser").value;
+            const pass = document.getElementById("inputFieldPass").value;
+
+            if (user === "s001" && pass === "student123") 
+            {
+                document.getElementById('studentDashboardSection').style.display='block';
+                document.getElementById('navbar').style.display='flex';
+		        document.getElementById('footer').style.display='flex'; 
+                document.getElementById('mainDiv').style.display='none';
+            } 
+
+            else 
+            {
+                alert("Invalid credentials");
+            }
+        }
+
+    </script>
+    
+<!-- ------------------------------------------------- END OF LOGIN FORM ------------------------------------------------------------------------------------- -->
+
+
+    <div id="studentDashboardSection"> <!--DASHBOARD SECTION-->
+        <br>
+        <div class="accountSection"> <!--account section-->
+
+            <div class="regiDate"> 
+                <div class="picAndTopic">
+                    <p class="eventTopic"> Account Registered On: </p>
+                    <p> 13/DEC/2025 </p>
+                </div>
+            </div>
+
+            <div class="appDate">
+                <div class="picAndTopic">
+                    <p class="eventTopic"> Account Approved On: </p>
+                    <p> 15/DEC/2025 </p>
+                </div>
+            </div>
+
+            <div class="lastLogin">
+                <div class="picAndTopic">
+                    <p class="eventTopic"> Last Logged In: </p>
+                    <p> June 15, 2025   10:00 AM </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <hr> <center><h4>Event Summary</h4></center>
+
+        <div class="eventSection"> <!--event section-->
+            <div class="attendedEvents"> 
+                <div class="picAndTopic">
+                    <img src="e1.png" height="33px" width="33px">
+                    <p class="eventTopic"> Total Events Attended: 10 </p>
+                </div>
+            </div>
+
+            <div class="tobeAttendedEvents">
+                <div class="picAndTopic">
+                    <img src="upcomig.png" height="35px" width="35px">
+                    <p class="eventTopic"> To Be Attended Events: 3 </p>
+                </div>
+            </div>
+        </div>
+
+        <hr> <center><h4>Recent Payment</h4></center>
+
+        <center>
+            <div id="paymnet">
+
+                <div id="paymentUp">
+                    <p><strong>Name: </strong> Sakura Haruka </p>
+                    <p><strong>Event Name:</strong> Tech Conference 2025</p>
+                    <p><strong>Event Date:</strong> June 15, 2025</p>
+                    <p><strong>Event Time:</strong> 10:00 AM</p>
+                    <p><strong>Date Paid:</strong> June 05, 2025</p>
+                </div>
+
+                <div id="paymentDown">
+                    <p><strong>Payment ID:</strong> PAY123456</p>
+                    <p><strong>Payment Method:</strong> MasterCard</p>
+                    <p><strong>Amount Paid:</strong> $50.00</p>
+                    <p><strong>Payment Method:</strong> Credit Card</p>
+                    <p style="padding: 5px; background-color: rgb(79, 243, 79); border-radius: 8px; color: black;"><strong>Payment Status:</strong> Completed</p>
+                    
+                </div>
+                    
+            </div>
+        </center>
+
+        <br>
+    </div> <!--END OF DASHBOARD SECTION-->
+
+    
+<!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+     <div id="manageNotificationSection"> <!--  NOTIFICATION SECTION--> 
+
+        <br><br><br>
+
+        <center>
+
+        <div id="totalNotifications" style="width: 92%; "> <!--FILTER --> 
+
+            <div style="border-radius: 8px; padding: 5px; border-style: solid; 
+            color: #151269; background-color: white; border-width: 1px;"> 20  Notifications</div>
+
+            <div>
+                <select id="filterSelect">
+                    <option value="">Today</option>
+                    <option value="">Yesterday</option>
+                    <option value="">Last 7 days</option>
+                    <option value="">Last 30 days</option>
+                </select>
+
+                <select id="filterSelect">
+                    <option value="">Reminders</option>
+                    <option value="">Alerts</option>
+                    <option value="">Confirmations</option>
+                </select>
+            </div>
+        </div>
+
+        <br>
+
+        <div id="notificationDiv">
+                <div id="notificationContent">
+                    <img src="comment-alt.png" height="15px" width="15px">
+                    <p id="notificationMessage">You have successfully registered for the 'MUSIC MADNESS'</p>
+                </div>
+
+                <div id="notificationContent">
+                    <img src="pending.png" height="15px" width="15px">
+                    <p id="notificationTimeAndDate">10:00 AM</p> 
+                </div>
+
+                <div id="notificationContent">
+                    <img src="calendar.png" height="15px" width="15px">
+                    <p id="notificationTimeAndDate">May 11, 2025</p> 
+                </div>
+
+                <a id="notificationDelete"><img src="circle-trash-red.png" height="20px" width="20px"></a> 
+        </div> <br>
+
+        <div id="notificationDiv">
+                <div id="notificationContent">
+                    <img src="comment-alt.png" height="15px" width="15px">
+                    <p id="notificationMessage">Reminder: Registration for the 'TECHNOLOGY WORKSHOP' closes tomorrow
+                        at 4:00 PM. Reserve your spot now before seats run out!
+                    </p>
+                </div>
+
+                <div id="notificationContent">
+                    <img src="pending.png" height="15px" width="15px">
+                    <p id="notificationTimeAndDate">10:00 AM</p> 
+                </div>
+
+                <div id="notificationContent">
+                    <img src="calendar.png" height="15px" width="15px">
+                    <p id="notificationTimeAndDate">May 11, 2025</p> 
+                </div>
+
+                <a id="notificationDelete"><img src="circle-trash-red.png" height="20px" width="20px"></a> 
+        </div> <br>
+
+        <div id="notificationDiv">
+                <div id="notificationContent">
+                    <img src="comment-alt.png" height="15px" width="15px">
+                    <p id="notificationMessage">An update has been made to the venue for 'SEMINAR'. The event will now take
+                        place in Hall D, Ground Floor.
+                    </p>
+                </div>
+
+                <div id="notificationContent">
+                    <img src="pending.png" height="15px" width="15px">
+                    <p id="notificationTimeAndDate">10:00 AM</p> 
+                </div>
+
+                <div id="notificationContent">
+                    <img src="calendar.png" height="15px" width="15px">
+                    <p id="notificationTimeAndDate">May 11, 2025</p> 
+                </div>
+
+                <a id="notificationDelete"><img src="circle-trash-red.png" height="20px" width="20px"></a> 
+        </div> <br>
+
+        <div id="notificationDiv">
+                <div id="notificationContent">
+                    <img src="comment-alt.png" height="15px" width="15px">
+                    <p id="notificationMessage">Thank you for attending the 'EVENT PLANNING BOOTCAMP'. </p>
+                </div>
+
+                <div id="notificationContent">
+                    <img src="pending.png" height="15px" width="15px">
+                    <p id="notificationTimeAndDate">10:00 AM</p> 
+                </div>
+
+                <div id="notificationContent">
+                    <img src="calendar.png" height="15px" width="15px">
+                    <p id="notificationTimeAndDate">May 11, 2025</p> 
+                </div>
+
+                <a id="notificationDelete"><img src="circle-trash-red.png" height="20px" width="20px"></a> 
+        </div> <br> <br>
+    </div> <!--END OF NOTIFICATION SECTION-->
+<!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+    
+    <div id="studentProfileSection"> <!-- STUDENT PROFILE SECTION | divided into 2 sections -->
+        <center> <img src="team3.jpg"  style="border-radius: 50%; width: 100px; height: 110px;" > <br><br> </center>
+
+        <div class="dataDiv"> <!-- main div to keep both data areas in rows -->
+
+            <div> <!-- first column of data inside the dataDiv | in colomn form to keep the labels aligned-->    
+                <label>First Name</label> <br> 
+                <input class="inputField" type="text"><br><br>
+                <label>Address</label> <br>
+                <input class="inputField" type="text"><br><br>
+                <label>Email</label><br>
+                <input class="inputField" type="email"><br><br>  
+                <label>Index Number</label><br>
+                <input class="inputField" type="text" placeholder="F/2324/S001"><br><br>
+                <label>Year of study</label><br>
+                <input class="inputField" type="text" ><br><br>
+                        
+            </div>
+
+            <div> <!-- second column of data inside the dataDiv-->
+                <label>Last Name</label><br>
+                <input class="inputField" type="text"><br><br>
+                <label>Phone Number</label><br>
+                <input class="inputField" type="text"><br><br>
+                <label>Password</label><br>
+                <input class="inputField" type="text"><br><br>
+                <label>Department</label><br>
+                <input class="inputField" type="text"><br><br>
+                <label>Account Registration</label><br>
+                <input class="inputField" type="date" ><br><br>
+            </div>
+        </div> <br>
+
+        <div class="buttonDiv">
+            <button class="btnLog" onclick="logout()"> LOGOUT </button>
+            <button class="btnSave"> SAVE </button>
+            <button class="btnEdit"> EDIT </button>
+        </div>
+
+    </div> <!-- END OF STUDENT PROFILE SECTION -->
+    <br><br><br>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+    <!--MAIN CONTAINER FOR THE FOOTER SO THAT THE SUB-CONTAINERS STAY IN A ROW-->
+
+	<div id="footer" style="display: none;"> 
+
+		<div class="footer1"> <!--FOOTER SECTION 1-->
+
+			<img src="logo.png" style="width: 200px; height: 190px;">
+
+			<p class="copyright">
+			Copyright © 2025 College of Technology.</p>
+
+			<p class="copyright"> All rights reserved.</p>
+
+		</div>
+
+
+		<div class="footer2"> <!--FOOTER SECTION 2-->
+
+			<h3 class="footerHeadings"> Follow Us </h3>
+
+			<center>
+			<div class="footer2row"> <!--1ST ROW AND THERE'S SPACE BETWEEN ICONS-->
+
+				<a> <!--INSTAGRAM-->
+					<img src="ig.png" title="instagram.com/collegeoftechnology" 
+                    style="width: 33px; height: 33px; border: none; cursor: pointer;">
+				</a>
+
+				<a> <!--FACEBOOK-->
+					<img src="facebook.png" title="https://www.facebook.com/collegeoftechnology" 
+                    style="width: 30px; height: 30px; border: none; cursor: pointer;">
+				</a>
+
+			</div>
+			</center>
+
+			<br>
+
+			<center>
+			<div class="footer2row"> <!--2ND ROW AND THERE'S SPACE BETWEEN ICONS-->
+
+				<a > <!--LINKEDIN-->
+					<img src="linkedin.png" title="https://www.linkedin.com/in/collegeoftechnology" 
+                    style="width: 30px; height: 30px; cursor: pointer; border: none;">
+				</a>
+
+				<a> <!--TWITTER-->
+					<img src="twitter.png" title="https://x.com/collegeoftechnology" 
+                    style="width: 30px; height: 30px; border: none; cursor: pointer;">
+				</a>
+					
+			</div>
+			</center>
+
+			<br>
+
+			<h3 class="footerHeadings"> Contact Number </h3>
+
+			<a href="tel:+94 76980 9566" 
+            style="font-size: 14px; color: #F8F8F8; text-decoration: none;"> +94 76980 9566
+			</a> <!--THIS PROTOCOL WILL OPEN THE DIALER ON THE PHONE AND CALL-->
+			
+			<br><br>
+				
+		</div>
+
+
+		<div class="footer3"> <!--FOOTER SECTION 3-->
+
+			<h3 class="footerHeadings"> Address </h3>
+
+			<p style="font-size: 14px;"> 80/6, Fernando Mawatha,</p>
+			<p style="font-size: 14px;"> Colombo, Sri Lanka</p>
+
+			<br>
+
+			<h3 class="footerHeadings"> Email </h3>
+
+			<a href="mailto:universityoftokyo@gmail.com" style="font-size: 14px; color: #F8F8F8; text-decoration: none;">
+			collegeoftechnology@gmail.com</a> 
+            <!--THIS PROTOCOL WILL OPEN THE USER'S DEFAULT EMAIL WITH THE "TO" FIELD PREFILLED-->	
+		</div>
+
+
+		<div class="footer4"><!--FOOTER SECTION 4-->
+
+			
+			<h3 class="footerHeadings"> Legal </h3>
+
+				<a href="" style="font-size: 12px; color: #F8F8F8;"> Privacy Policy</a>
+				<br><br>
+				<a href="" style="font-size: 12px;color: #F8F8F8;"> Terms and Conditions</a>
+				<br><br><br><br><br><br>
+
+				<a class="top" href="#backToTop">
+					<img src="top.png" style="width: 30px; height: 30px; border: none; padding-left: 75%;">
+				</a>
+
+		</div> 
+	</div>
+
+
+</body>
+</html>

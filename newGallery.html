@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Gallery Page - Event Management System </title>
+
+    <link rel="stylesheet" href="navAndFooter.css"> 
+    <link rel="stylesheet" href="newGallery.css"> 
+    <script src="navBar.js"></script>
+	<script src="newAdmin.js"></script>
+</head>
+
+<body style=" background-color: #d7d6f5;">
+	
+    <div id="navbar"> <!--navbar -->
+        <div class="logo"> <!--div for logo inside navbar  -->
+            <img src="logo.png" class="logo">
+        </div>
+
+        <div class="collegeName">
+			COLLEGE OF TECHNOLOGY
+		</div>
+
+        <div class="Menu"> <!--div for menu inside navbar -->
+            <img src="menu2.png" onclick="navDropDown()" height="30px" width="25px" title="Menu" class="menuIcon ">           
+        </div>
+	</div>
+
+    <br>
+
+    <div id="dropdown"> <!--div for nav dropdown -->
+
+        <ul id="dropdownList"> 
+            <li> <a href="newHome.html"> <img src="home.png" height="15px" width="15px"> HOME </a> </li> <br>
+            <li> <a href="newEvents.html"> <img src="grid.png" height="15px" width="15px"> EVENTS </a></li><br>
+            <li> <a href="newGallery.html"> <img src="gallery.png" height="15px" width="15px"> GALLERY </a></li><br>
+            <li> <a href="newStudent.html" > <img src="user.png" height="15px" width="15px"> STUDENT PANEL▼</a> </li><br>
+            <li> <a href="newAdmin.html" > <img src="admin.png" height="15px" width="15px"> ADMIN PANEL▼</a></li>
+        </ul>
+    </div>
+
+    <a name="backToTop"></a>
+
+<!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
+	<main>
+        <section class="gallery-section">
+            <div class="featured-gallery">
+                <div class="scroll-container">
+                    <img src="event (1).jpeg" alt="Event photo 1" loading="lazy" style="border-radius: 10px;">
+                    <img src="event (2).jpeg" alt="Event photo 2" loading="lazy" style="border-radius: 10px;">
+                    <img src="event (3).jpeg" alt="Event photo 3" loading="lazy" style="border-radius: 10px;">
+                    <img src="event (4).jpeg" alt="Event photo 4" loading="lazy" style="border-radius: 10px;">
+                    <img src="event (5).jpeg" alt="Event photo 5" loading="lazy" style="border-radius: 10px;">
+                    <img src="event (6).jpeg" alt="Event photo 6" loading="lazy" style="border-radius: 10px;">
+                </div>
+            </div>
+        </section>
+    </main>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+ 
+	<div id="mediaDisplayDiv" style="display: flex; flex-direction: row; justify-content: center; gap: 2.5rem; 
+	flex-wrap: wrap; gap: 20px; margin-left: 20px; margin-right: 20px;"> </div> <!-- displays all the images -->
+
+	
+<!-- -------------------------------------------- script to display all media on the gallery page ------------------------------------- -->
+ 
+	<script type="text/javascript">
+
+		window.onload=function()
+		{
+			let mediaStored = localStorage.getItem('mediaAllDataLabel'); 
+			let mediaConvertToArr = JSON.parse(mediaStored);  
+
+			if (mediaConvertToArr)
+			{
+				mediaConvertToArr.forEach (mediaLoop=> 
+				{
+					let mediaCreateDiv = document.createElement("div"); 
+					mediaCreateDiv.classList.add("mediaEventCard");
+
+					let mediaPosterContainer=document.createElement('img'); 
+					mediaPosterContainer.src = mediaLoop.mediaPoster;
+					mediaCreateDiv.appendChild(mediaPosterContainer);
+					mediaPosterContainer.classList.add("mediaImage");
+
+					let mediaLink = document.createElement("a");
+					mediaLink.href = mediaLoop.mediaLink;
+					mediaLink.style.textDecoration='none';
+
+					let overlay= document.createElement("div");
+					overlay.classList.add("overlay");
+
+					let viewBtn= document.createElement("button");
+					viewBtn.classList.add("viewBtnStyle");
+					viewBtn.textContent="View";
+
+					// Toggle visibility on image click
+					mediaPosterContainer.onclick = function() 
+					{
+						showPopup(mediaLoop.mediaDes);
+					};
+
+					mediaLink.appendChild(viewBtn);
+					overlay.appendChild(mediaLink);
+					mediaCreateDiv.appendChild(mediaPosterContainer);
+					mediaCreateDiv.appendChild(overlay)
+					document.getElementById('mediaDisplayDiv').appendChild(mediaCreateDiv);
+				});
+			}
+		}
+	</script>
+	<br><br>
+
+<!-- ------------------------------------------------ footer ------------------------------------------------------------------- -->
+
+    <!--MAIN CONTAINER FOR THE FOOTER SO THAT THE SUB-CONTAINERS STAY IN A ROW-->
+
+	<div id="footer"> 
+
+		<div class="footer1"> <!--FOOTER SECTION 1-->
+
+			<img src="logo.png" style="width: 200px; height: 190px;">
+
+			<p class="copyright">
+			Copyright © 2025 College of Technology.</p>
+
+			<p class="copyright"> All rights reserved.</p>
+
+		</div>
+
+
+		<div class="footer2"> <!--FOOTER SECTION 2-->
+
+			<h3 class="footerHeadings"> Follow Us </h3>
+
+			<center>
+			<div class="footer2row"> <!--1ST ROW AND THERE'S SPACE BETWEEN ICONS-->
+
+				<a> <!--INSTAGRAM-->
+					<img src="ig.png" title="instagram.com/collegeoftechnology" 
+                    style="width: 33px; height: 33px; border: none; cursor: pointer;">
+				</a>
+
+				<a> <!--FACEBOOK-->
+					<img src="facebook.png" title="https://www.facebook.com/collegeoftechnology" 
+                    style="width: 30px; height: 30px; border: none; cursor: pointer;">
+				</a>
+
+			</div>
+			</center>
+
+			<br>
+
+			<center>
+			<div class="footer2row"> <!--2ND ROW AND THERE'S SPACE BETWEEN ICONS-->
+
+				<a > <!--LINKEDIN-->
+					<img src="linkedin.png" title="https://www.linkedin.com/in/collegeoftechnology" 
+                    style="width: 30px; height: 30px; cursor: pointer; border: none;">
+				</a>
+
+				<a> <!--TWITTER-->
+					<img src="twitter.png" title="https://x.com/collegeoftechnology" 
+                    style="width: 30px; height: 30px; border: none; cursor: pointer;">
+				</a>
+					
+			</div>
+			</center>
+
+			<br>
+
+			<h3 class="footerHeadings"> Contact Number </h3>
+
+			<a href="tel:+94 76980 9566" 
+            style="font-size: 14px; color: #F8F8F8; text-decoration: none;"> +94 76980 9566
+			</a> <!--THIS PROTOCOL WILL OPEN THE DIALER ON THE PHONE AND CALL-->
+			
+			<br><br>
+				
+		</div>
+
+
+		<div class="footer3"> <!--FOOTER SECTION 3-->
+
+			<h3 class="footerHeadings"> Address </h3>
+
+			<p style="font-size: 14px;"> 80/6, Fernando Mawatha,</p>
+			<p style="font-size: 14px;"> Colombo, Sri Lanka</p>
+
+			<br>
+
+			<h3 class="footerHeadings"> Email </h3>
+
+			<a href="mailto:universityoftokyo@gmail.com" style="font-size: 14px; color: #F8F8F8; text-decoration: none;">
+			collegeoftechnology@gmail.com</a> 
+            <!--THIS PROTOCOL WILL OPEN THE USER'S DEFAULT EMAIL WITH THE "TO" FIELD PREFILLED-->	
+		</div>
+
+
+		<div class="footer4"><!--FOOTER SECTION 4-->
+
+			
+			<h3 class="footerHeadings"> Legal </h3>
+
+				<a href="" style="font-size: 12px; color: #F8F8F8;"> Privacy Policy</a>
+				<br><br>
+				<a href="" style="font-size: 12px;color: #F8F8F8;"> Terms and Conditions</a>
+				<br><br><br><br><br><br>
+
+				<a class="top" href="#backToTop">
+					<img src="top.png" style="width: 30px; height: 30px; border: none; padding-left: 75%;">
+				</a>
+
+		</div> 
+	</div>
+
+</body>
+</html>

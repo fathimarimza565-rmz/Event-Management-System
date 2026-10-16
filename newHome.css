@@ -1,0 +1,146 @@
+body
+{
+    overflow-x: hidden;
+    height: 100vh;
+    margin: 0;
+
+}
+
+.vdo
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    max-height: 85%;
+    object-fit: cover;
+    z-index: -1;  /* Ensure the video stays behind all other content */
+
+}
+
+.title
+{
+    position: absolute;
+    transform: translate(-50% ,-50%);
+    color:black;
+    left: 53%;
+    top: 40%;
+    font-size: 36px;
+    margin-right: auto;
+    display: flex;
+    font-weight: bold;
+    text-align: center;
+}
+
+.tagline
+{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #333333;
+    font-size: 30px;
+    left: 3%;
+}
+
+.startbutton
+{
+    cursor: pointer;
+    margin-right: 5%;
+}
+
+.startbutton:hover
+{
+    scale: 1.1;
+    transition: 0.5s ease;
+}
+
+.startbutton a
+{
+    text-decoration: none; 
+    color: #151269; 
+    background-color: whitesmoke ; 
+    padding: 13px; 
+    border-radius: 10px;
+}
+
+.aboutAndTeam
+{
+    margin-top: 500px;
+}
+
+.aboutUs
+{
+    display: flex; 
+    justify-content: space-around; 
+    padding: 30px; 
+    flex-wrap: wrap;
+}
+
+.aboutUsCard
+{
+    margin-bottom: 30px;
+    text-align: center;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    width: 300px; 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px #151269; 
+    margin: 10px;
+    background-color: #151269;
+    color: whitesmoke;
+    
+}
+
+.aboutUsCard:hover
+{
+    scale: 1.02;
+    transition: 0.3s ease;
+}
+.aboutUsCard h3
+{
+    text-decoration: underline;
+}
+.team h2
+{
+    text-align: center; 
+    color: #151269;
+}
+
+.team p
+{
+    text-align: center; 
+    color: #333333; 
+    max-width: 700px; 
+    margin: auto;
+}
+
+.gallery
+{
+    text-align: center;
+}
+
+.image-row
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.image-row img
+{
+    width: 200px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.image-row img:hover
+{
+    transform: scale(1.05);
+}

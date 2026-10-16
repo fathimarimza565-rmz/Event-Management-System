@@ -1,0 +1,74 @@
+#studentProfileSection /* ID for student panel*/
+{ 
+    margin: 15px; 
+    margin-top: 100px;
+    background-color: whitesmoke; 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.1); 
+    border-color: #151269;
+    border-style: groove;
+    width: 70%;
+    margin-left: 16%;
+}
+
+.mainDiv /* class for admin panel*/
+{ 
+    margin: 15px; 
+    background-color: whitesmoke; 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.1); 
+    border-color: #151269;
+    border-style: groove;
+    width: 70%;
+    margin-left: 16%;
+}
+
+.dataDiv
+{
+    display: flex; 
+    flex-direction: row;
+    gap: 100px;
+}
+
+.inputField
+{
+    border-radius: 8px;
+    border-width: 1.5px;
+    border-color: #151269;
+    height: 25px;
+    width: 400px;
+    padding: 2px;
+    font-weight: bold;
+    color: #151269;
+    font-family: georgia;
+}
+
+.inputField:hover
+{
+    background-color: #d7d6f5;
+}
+
+.buttonDiv
+{
+    margin-left: 75%;
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+.btnLog, .btnSave, .btnEdit
+{
+    padding: 8px;
+    border-radius: 8px;
+    border-style: none;
+    background-color: #151269;
+    color: white;
+    cursor: pointer;
+}
+
+.btnLog:hover, .btnSave:hover, .btnEdit:hover
+{
+    scale: 1.1;
+    transition: 0.2s ease;
+}

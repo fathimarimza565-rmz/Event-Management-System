@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home Page - Event Management System </title>
+
+    <link rel="stylesheet" href="navAndFooter.css">
+    <link rel="stylesheet" href="newHome.css"> 
+    <script src="navBar.js"></script>
+</head>
+
+<body>
+
+    <div id="navbar"> <!--navbar | css line 8 -->
+        <div class="logo"> <!--div for logo inside navbar | css line 21 -->
+            <img src="logo.png" class="logo">
+        </div>
+
+        <div class="collegeName">
+			COLLEGE OF TECHNOLOGY
+		</div>
+
+        <div class="Menu"> <!--div for menu inside navbar -->
+            <img src="menu2.png" onclick="navDropDown()" height="30px" width="25px" title="Menu" class="menuIcon ">           
+        </div>
+	</div>
+
+    <br>
+
+    <div id="dropdown"> <!--div for nav dropdown | css line 43-->
+
+        <ul id="dropdownList"> <!--css line 54-->
+            <li> <a href="newHome.html"> <img src="home.png" height="15px" width="15px"> HOME </a> </li> <br> <!--css line 63-->
+            <li> <a href="newEvents.html"> <img src="grid.png" height="15px" width="15px"> EVENTS </a></li><br>
+            <li> <a href="newGallery.html"> <img src="gallery.png" height="15px" width="15px"> GALLERY </a></li><br>
+            <li> <a href="newStudent.html" > <img src="user.png" height="15px" width="15px"> STUDENT PANEL▼</a> </li><br>
+            <li> <a href="newAdmin.html" > <img src="admin.png" height="15px" width="15px"> ADMIN PANEL▼</a></li>
+        </ul>
+    </div>
+
+    <a name="backToTop"></a>
+    <br><br>
+<!-- -------------------------------------------------------------------------------------------------------------------------------------- -->
+    <video class="vdo" autoplay muted loop>
+        <source src="bgvdo1.mp4" type="video/mp4">
+    </video>
+
+    <div class="main"> <!-- hero img and title -->
+        <div class="title">
+            <h1>COLLEGE OF <br>TECHNOLOGY </h1>
+        </div>
+
+            <div class="tagline">
+                <p>- Bring Your University Events To Life With Ease - </p>
+                <br>
+                <div class="startbutton">
+                    <a href="newEvents.html"> GET STARTED </a> <br>
+                </div>   
+            </div>
+        </div>
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+    <div class="aboutAndTeam"> <!-- about,mission,vision.team --> 
+
+         <div class="aboutUs"> <!-- about us 3 boxes -->
+
+            <div class="aboutUsCard">
+                <h3 > About Our Platform</h3>
+                <p>
+                    The Event Management System of the College of Technology is a centralized platform developed to keep 
+                    students informed about institutional events. 
+                    It provides timely updates on upcoming activities and maintains a 
+                    comprehensive record of completed events. 
+                </p>
+            </div>
+
+            <div class="aboutUsCard"> 
+                <h3>Our Mission</h3>
+              <p>
+                To provide a reliable and accessible platform that bridges the communication gap between the institution and students,
+                enabling seamless access to event information and encouraging greater involvement in campus life.
+              </p>
+            </div>
+          
+            <div class="aboutUsCard"> 
+                <h3>Our Vision</h3>
+                <p>
+                To become an integral part of the college ecosystem by fostering a more connected, 
+                informed, and engaged student community through efficient event management and communication tools.
+                </p>
+          </div>
+        
+        </div> <!-- end of about us 3 boxes -->
+
+        <hr>
+        
+        <section class="team"> <!-- team -->
+            <h2 > Meet The Team </h2>
+            <p>This platform is developed and maintained by a dedicated team of students from the College of Technology, committed to 
+            enhancing the digital experience on campus. With a shared vision of improving communication and accessibility, the team 
+            combines technical expertise and a passion for innovation.</p>
+        </section>   
+
+        <section class="gallery">
+            <div class="image-row">
+                <img src="team1.jpg" alt="image 1">
+                <img src="team2.jpg" alt="image 2">
+                <img src="team5.jpg" alt="image 3">
+            </div>
+            
+            <div class="image-row">
+                <img src="team4.jpg" alt="image 4">
+                <img src="team3.jpg" alt="image 5">
+                
+            </div>
+            <br> <br>
+           
+        </section>
+
+    </div>
+    <br><br>
+
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+
+
+    <!--MAIN CONTAINER FOR THE FOOTER SO THAT THE SUB-CONTAINERS STAY IN A ROW-->
+
+	<div id="footer"> 
+
+		<div class="footer1"> <!--FOOTER SECTION 1-->
+
+			<img src="logo.png" style="width: 200px; height: 190px;">
+
+			<p class="copyright">
+			Copyright © 2025 College of Technology.</p>
+
+			<p class="copyright"> All rights reserved.</p>
+
+		</div>
+
+
+		<div class="footer2"> <!--FOOTER SECTION 2-->
+
+			<h3 class="footerHeadings"> Follow Us </h3>
+
+			<center>
+			<div class="footer2row"> <!--1ST ROW AND THERE'S SPACE BETWEEN ICONS-->
+
+				<a> <!--INSTAGRAM-->
+					<img src="ig.png" title="instagram.com/collegeoftechnology" 
+                    style="width: 33px; height: 33px; border: none; cursor: pointer;">
+				</a>
+
+				<a> <!--FACEBOOK-->
+					<img src="facebook.png" title="https://www.facebook.com/collegeoftechnology" 
+                    style="width: 30px; height: 30px; border: none; cursor: pointer;">
+				</a>
+
+			</div>
+			</center>
+
+			<br>
+
+			<center>
+			<div class="footer2row"> <!--2ND ROW AND THERE'S SPACE BETWEEN ICONS-->
+
+				<a > <!--LINKEDIN-->
+					<img src="linkedin.png" title="https://www.linkedin.com/in/collegeoftechnology" 
+                    style="width: 30px; height: 30px; cursor: pointer; border: none;">
+				</a>
+
+				<a> <!--TWITTER-->
+					<img src="twitter.png" title="https://x.com/collegeoftechnology" 
+                    style="width: 30px; height: 30px; border: none; cursor: pointer;">
+				</a>
+					
+			</div>
+			</center>
+
+			<br>
+
+			<h3 class="footerHeadings"> Contact Number </h3>
+
+			<a href="tel:+94 76980 9566" 
+            style="font-size: 14px; color: #F8F8F8; text-decoration: none;"> +94 76980 9566
+			</a> <!--THIS PROTOCOL WILL OPEN THE DIALER ON THE PHONE AND CALL-->
+			
+			<br><br>
+				
+		</div>
+
+
+		<div class="footer3"> <!--FOOTER SECTION 3-->
+
+			<h3 class="footerHeadings"> Address </h3>
+
+			<p style="font-size: 14px;"> 80/6, Fernando Mawatha,</p>
+			<p style="font-size: 14px;"> Colombo, Sri Lanka</p>
+
+			<br>
+
+			<h3 class="footerHeadings"> Email </h3>
+
+			<a href="mailto:universityoftokyo@gmail.com" style="font-size: 14px; color: #F8F8F8; text-decoration: none;">
+			collegeoftechnology@gmail.com</a> 
+            <!--THIS PROTOCOL WILL OPEN THE USER'S DEFAULT EMAIL WITH THE "TO" FIELD PREFILLED-->	
+		</div>
+
+
+		<div class="footer4"><!--FOOTER SECTION 4-->
+
+			
+			<h3 class="footerHeadings"> Legal </h3>
+
+				<a href="" style="font-size: 12px; color: #F8F8F8;"> Privacy Policy</a>
+				<br><br>
+				<a href="" style="font-size: 12px;color: #F8F8F8;"> Terms and Conditions</a>
+				<br><br><br><br><br><br>
+
+				<a class="top" href="#backToTop">
+					<img src="top.png" style="width: 30px; height: 30px; border: none; padding-left: 75%;">
+				</a>
+
+		</div> 
+	</div>
+
+
+</body>
+</html>
