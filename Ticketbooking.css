@@ -1,0 +1,252 @@
+body 
+{
+    font-family: verdana;
+    background-color: #d7d6f5;
+    background-size: cover;
+    background-attachment: scroll;
+    margin: 0;
+    padding: 20px;
+    color: #282727;
+}
+
+.blur
+{
+    filter: blur(5px);
+    pointer-events: none;
+}
+
+h1 {
+    color: #000000;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+h3
+{
+    color: #151269;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 25px 0 15px 0;
+    text-align: center;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+h4 
+{
+    text-align: center;
+    margin-top: 1%;
+}
+
+
+form 
+{
+    width: 900px;
+    max-height: 865px;
+    margin: 30px auto;
+    background-color: whitesmoke;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 1.5);
+    font-size: 13px;
+}
+
+
+label 
+{
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #020202;
+}
+
+input[type="text"], input[type="number"], input[type="date"]
+{
+    width: 95%;
+    padding: 8px;
+    background-color: transparent;
+    border: solid;
+    border-width: 1px;
+    border-color: #333333;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+input:hover
+{
+    border: 1px solid #81b1ce;
+    transition: .5s;
+}
+
+fieldset 
+{
+    border-radius: 10px;
+    width: 400px;
+    border-color: #333333;
+}
+
+
+button[type="submit"] 
+{
+    background-color: #151269;
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 70%;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover 
+{
+    background-color: #81b1ce;
+    color: #151269;
+}
+
+
+.payment-method-images img 
+{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 4px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.payment-method-images img:hover 
+{
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.payment-method-option 
+{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+
+input[type="radio"]:checked+.payment-method-option img 
+{
+    border: 2px solid #00c3ff;
+    display: flex;
+    box-shadow: 0 0 0 2px rgba(74, 110, 169, 0.2);
+}
+
+
+.Student-detail 
+{
+    margin-top: -3%;
+}
+
+
+.payment-method 
+{
+    margin-left: 470px;
+    margin-top: -750px;
+}
+
+.card-type 
+{
+    margin-left: 470px;
+    padding: 0%;
+}
+
+.pay-para
+{
+    font-weight: bold;
+    margin-top: -5%;
+    color: red;
+}
+
+#getReceipt
+{
+    padding: 5px;
+    border-radius: 8px;
+    margin-left: 47%;
+    cursor: pointer;
+    background-color: #151269;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-family: verdana;
+    font-weight: 600;
+}
+
+#getReceipt:hover 
+{
+    background-color: #81b1ce;
+    color: #151269;
+    transition: background-color 0.3s;
+}
+
+
+#paymentReceipt
+{
+    display: none;
+    width: 50%;
+    background-color: #333333;
+    padding: 15px;
+    border-radius: 20px;
+    color: whitesmoke;
+    font-size: 13px;
+    position: absolute;
+    top: 60%;
+    left: 25%;
+}
+
+#subPaymentDiv
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    color: whitesmoke;
+}
+
+#subPaymentDiv1
+{
+    text-align: center;
+}
+
+#subPaymentDiv1 h3
+{
+    color: whitesmoke;
+}
+
+#receiptBtn
+{
+    padding: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 83%;
+    font-weight: bold;
+}
+
+#receiptBtn:hover, #closePayment:hover
+{
+    background-color: #81b1ce;
+}
+
+#closePayment
+{
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 96%;
+    font-weight: bold;
+    width: 30px;
+    text-align: center;
+}

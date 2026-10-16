@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Ticket Booking </title>
+    <link rel="stylesheet" href="Ticketbooking.css">
+</head>
+
+<body>
+
+    <div id="blurWrapper">
+        <form>
+            <h1> Secure Your Spot Now! </h1> <br><br>
+
+            <Fieldset class="Student-detail">
+
+                <legend>
+                    <H3>Student Details</H3>
+                </legend>
+
+                <label> Full Name :</label>
+                <input type="text" placeholder="Sakura Haruno" readonly > <br><br><br>
+
+                <label> Registration Number :</label>
+                <input type="text" placeholder="S007" readonly><br><br><br>
+
+                <label> Email Address :</label>
+                <input type="text" placeholder="sakura@gmail.com" readonly><br><br><br>
+
+
+                <label> Select Your Department</label><br>
+                <div class="department-box">
+                    <input type="radio" name="dept" checked disabled> HND in IT <br>
+                    <input type="radio" name="dept"> HND in ENGLISH <br>
+                    <input type="radio" name="dept"> HND in MANAGEMENT <br>
+                    <input type="radio" name="dept"> HND in THM <br><br>
+                </div>
+
+            </Fieldset> 
+
+
+            <Fieldset class="Event-detail">
+
+                <legend>
+                    <H3>Event Details</H3>
+                </legend>
+
+                <label> Event Name :</label>
+                <input type="text" placeholder="Technology Workshop" readonly><br><br><br>
+
+                <label> Price Per Ticket :</label>
+                <input type="text" placeholder="$50" readonly><br><br><br>
+
+                <div class="pay-para">
+                    <p> ⚠ Each device is limited to one ticket booking</p>
+                </div>
+
+            </Fieldset>
+
+
+            <div class="payment-method">
+
+                <fieldset>
+                    <legend>
+                        <h3>Payment Method</h3>
+                    </legend>
+
+
+                    <div class="payment-method-images">
+                        <label>
+                            <input type="radio" name="payment" value="credit" checked style="display: none;">
+                            <div class="payment-method-option">
+                                <img src="visa (3).png" alt="Credit Card">
+                                <span>Credit Card</span>
+                            </div>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="payment" value="debit" style="display: none;">
+                            <div class="payment-method-option">
+                                <img src="card.png" alt="Debit Card">
+                                <span>Debit Card</span>
+                            </div>
+                        </label>
+                    </div>
+                </fieldset>
+
+            </div>
+
+
+            
+            <div class="card-type">
+                <fieldset class="card-method">
+                    <legend>
+                        <h3>Credit/Debit Card</h3>
+                    </legend>
+
+                    <label> Card Holder Name : </label>
+                    <input type="text" id="card-number" ><br><br>
+
+                    <label> Enter Your Card Number : </label>
+                    <input type="text" id="card-number"><br><br>
+
+                    <label> Card Expiry : </label>
+                    <input type="text" id="expiry-date" placeholder="(MM/YY)"><br><br>
+
+                    <label> CVV : </label>
+                    <input type="text" id="CVV"><br><br>
+
+                    <label> Date Of Payment </label>
+                    <input type="text" placeholder="23.01.2025" readonly> <br><br><br>
+
+                    <center> <button type="submit" onclick="pay()" > Pay Now </button> </center> <br><br>
+                </fieldset> <br>
+                
+            </div>
+        </form>
+    </div>
+
+    <button type="button" id="getReceipt" onclick="getReceipt()" > Get Receipt </button>
+    
+    <div id="paymentReceipt">
+        <button id="closePayment" onclick="closeReceiptForm()" > ✖ </button>
+        <center> <h2> Event Payment Receipt </h2> </center>
+        <p> <strong> Transaction ID: </strong> TXN-1234-G5DH7 </p>
+        <p> <strong> Date/Time of Payment: </strong> 23, January, 2025 | 10:45 AM </p>
+
+        <div id="subPaymentDiv">
+            <div id="subPaymentDiv1">
+                <center> <h3> Student Information </h3> </center>
+                <p> <strong> Full Name: </strong> Sakura Haruno </p>
+                <p> <strong> Registration Number: </strong> S007 </p>
+                <p> <strong> Email Address: </strong> sakura@gmail.com </p>
+                <p> <strong> Department: </strong> Information Technology </p>
+            </div>
+
+            <div id="subPaymentDiv1">
+                <center> <h3> Event Information </h3> </center>
+                <p> <strong> Event Name: </strong> Technology Workshop </p>
+                <p> <strong> Event Date: </strong> 05, February, 2025 </p>
+                <p> <strong> Price Per Ticket: </strong> $50 </p>
+                <p> <strong> Amount Paid: </strong> $50 </p>
+            </div>
+
+            <div id="subPaymentDiv1">
+                <center> <h3> Payment Information </h3> </center>
+                <p> <strong> Payment Method: </strong> Visa </p>
+                <p> <strong> Card Number: </strong> *** *** *** 1234 </p>
+                <p> <strong> Card Holder Name: </strong> Sakura Haruno </p>
+            </div>
+        </div>
+
+        <center> <img src="logo.png" height="100px" width="100px"> </center>
+
+        <center> <p> Thank you for your payment! </p> </center>
+        <center> <p> For any concerns: +94 234 556 7722 or clgoftechnology@gmail.com </p> </center>
+        <center> <p> Please keep this receipt for your record </p> </center>
+        <button id="receiptBtn"> Download PDF </button>
+    </div>
+
+    <script>
+        function pay()
+        {
+            alert('Payment Successful!')
+        }
+
+        function getReceipt()
+        {
+            document.getElementById('paymentReceipt').style.display = 'block';
+            document.getElementById('blurWrapper').classList.add('blur');  
+        }
+
+        function closeReceiptForm()
+        {
+            document.getElementById('paymentReceipt').style.display = 'none';
+            document.getElementById('blurWrapper').classList.remove('blur');
+        }
+    </script>
+    
+
+</body>
+</html>

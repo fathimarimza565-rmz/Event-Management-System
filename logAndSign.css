@@ -1,0 +1,339 @@
+body
+{
+    margin: 0;
+    font-family: verdana;
+}
+
+/* --------------------------------- animation ------------------------------ */
+
+@keyframes rightDiv
+{
+    from 
+    {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to 
+    {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+#rightDiv
+{
+    animation: rightDiv 2s ease forwards;
+}
+
+@keyframes picDiv
+{
+    from 
+    {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to 
+    {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.picDiv
+{
+    animation: picDiv 2s ease forwards;
+}
+
+/* --------------------------------- end of animation ------------------------------ */
+
+#mainDiv
+{
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    position:absolute;
+    top: 0;
+    margin: 3% 30% 5% 13%; /* top | right | bottom | left */
+}
+
+.picDiv
+{
+    width: 500px;
+    background-color: #151269;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+#pic
+{
+    width: 100%;
+    height: 530px;
+}
+
+/* --------------------------------- login ------------------------------ */
+
+#rightDiv
+{
+    background-color: grey;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 10px 10px 10px rgba(0,0,0,.2);
+}
+
+
+#logIn
+{
+    background-color: grey;
+    color: white;
+    width: 500px; 
+    padding-bottom: 35px;
+    padding-top: 50px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+#logIn h1
+{
+    font-size: 36px;
+    text-align: center;
+    color: #151269;
+}
+
+
+
+#inputFieldUser, #inputFieldPass
+{
+    width: 60%;
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 40px;
+    border-style: solid;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: verdana;
+    color: #151269;
+    border-color: #151269;
+}
+
+#inputFieldUser:hover, #inputFieldPass:hover
+{
+    border: 2px solid #d7d6f5;
+    transition: .5s;
+}
+
+#inputFieldUser::placeholder, #inputFieldPass::placeholder
+{
+    color: #d7d6f5;
+}
+
+#startBtn
+{
+    background-color: #151269;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 40px;
+    color: #d7d6f5;
+    font-weight: bold;
+}
+
+#startBtn:hover
+{
+    background-color: #81b1ce;
+    color: #151269;
+    transition: 0.3s ease;
+    border: 2px solid #151269;
+}
+
+#form p
+{
+    font-size: 12px;
+}
+/* --------------------------------- end of login ------------------------------ */
+
+
+
+/* --------------------------------- signUp ------------------------------ */
+
+#signUp
+{
+    display: flex;
+    flex-direction: column;
+    background-color: grey;
+    color: white;
+    padding: 10px;
+    width: 500px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    
+}
+
+#signUp h1
+{
+    font-size: 26px;
+    text-align: center;
+    color: #151269;
+}
+
+#signUpForm
+{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#signUpInput
+{
+    width: 200px;
+    padding: 15px;
+    background-color: transparent;
+    border-radius: 40px;
+    border-style: solid;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: verdana;
+    color: #151269;
+    border-color: #151269;
+}
+
+#signUpInput:hover
+{
+    border: 2px solid #d7d6f5;
+    transition: .5s;
+}
+
+#signUpInput::placeholder
+{
+    color: #d7d6f5;
+}
+
+#signUpBtn
+{
+    background-color: #151269;
+    padding: 10px;
+    border-radius: 40px;
+    color: #d7d6f5;
+    font-weight: bold;
+    margin-left: 40%;
+    width: 100px;
+    text-align: center;
+}
+
+#signUpBtn:hover
+{
+    background-color: #81b1ce;
+    color: #151269;
+    transition: 0.3s ease;
+    border: 2px solid #151269;
+    cursor: pointer;
+}
+
+
+/* --------------------------------- end of signUp ------------------------------ */
+
+/*.show-popup2 .blur-bg-overlay
+{
+    opacity: 1;
+    pointer-events: auto;
+}*/
+
+/* -----------------------------------------------------------------
+
+body.show-popup2.sign
+{
+    display: block;
+}
+
+.sign
+{
+    position: fixed;
+    width: 35%;
+    top:780px;
+    left: 50%;
+    padding: 30px;
+    background-color: #124E66;
+    border: 3px solid rgba(255, 255, 255, .2);
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    color: white;
+    border-radius: 10px;
+    padding: 30px 40px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -100%);
+}
+
+.show-popup2 .sign
+{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease, opacity 0.1s;
+}
+
+.sign .close-btn
+{
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color:white;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.sign h1
+{
+    font-size: 36px;
+    text-align: center;
+}
+
+.sign .input-box
+{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    margin: 30px 0;
+}
+
+.input-box input
+{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid #d2dcde;
+    border-radius: 40px;
+    font-size: 16px;
+    color: white;
+    padding: 20px 45px 20px 20px;
+}
+
+.input-box input:hover
+{
+    border: 2px solid black;
+    transition: .5s;
+}
+
+.input-box input::placeholder
+{
+    color: #d2dcde;
+}
+
+.sign .button
+{
+    width: 100%;
+    height: 45px;
+    background:#d2dcde;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.sign .button:hover
+{
+    background: white;
+    transition: .5s;
+} */

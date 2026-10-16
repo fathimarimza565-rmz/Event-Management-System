@@ -1,0 +1,163 @@
+body
+{
+    background-color: #d7d6f5;
+    font-family: verdana;
+}
+
+.allDetailsDiv
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 50px 0 50px;
+}
+
+.sectionOne
+{
+    padding: 5px;
+    width: 47%;
+}
+
+.sectionTwo
+{
+    width: 40%;
+    padding: 5px;
+}
+
+.descriptionPara
+{
+    text-align: justify;
+    color: #333333;
+    font-size: 16px;
+}
+
+.Book button 
+{
+  background-color: #333333;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 15px 30px;
+  border-radius: 8px;
+  border-style: solid;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+  font-family: verdana;
+  text-align: center;
+  margin-top: -200px;
+}
+
+.Book button:hover 
+{
+  background-color: #868585;
+  color: black;
+  border-color: #333333;
+}
+
+.Mine button
+{
+  background-color: #333333;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 15px 30px;
+  border-radius: 8px;
+  border-style: solid;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+  font-family: verdana;
+  text-align: center;
+  margin-left: 500px;
+  margin-top: -150px;
+}
+
+.Mine button:hover 
+{
+  background-color: #868585;
+  color: black;
+  border-color: #333333;
+}
+
+.top-box 
+{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.box-card 
+{
+  padding: 8px;
+  background-color: whitesmoke;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+  width: 320px;
+  padding-left: 50px;
+}
+
+.box-card:hover 
+{
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.event-info 
+{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.title 
+{
+  font-size: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+.value 
+{
+  font-size: 14px;
+  color: #333333;
+  font-weight: bold;
+}
+
+.conducted 
+{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 50px;
+  
+}
+
+
+
+
+.organizer-info h4
+ {
+  margin: 0;
+  font-size: 17px;
+  color: #113065;
+}
+
+.organizer-info p 
+{
+  margin: 5px 0;
+  color: #113065;
+  font-size: 15px;
+}
+
+.organizer-info  
+{
+  color: #81b1ce;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.organizer-info a:hover 
+{
+  text-decoration: underline;
+}

@@ -1,0 +1,836 @@
+/* --------------------------------------------------- dashboard -------------------------------------------------- */
+.blur
+{
+    filter: blur(5px);
+    pointer-events: none;
+}
+
+#dashboardSection
+{
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+
+.eventSection
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 5%;
+    padding: 20px;
+}
+
+.totalEvents
+{
+    border-radius: 5px;
+    padding: 15px;
+    width: 200px;
+    background-color: #98BDFF;
+    box-shadow: 8px 5px 3px rgba(78, 77, 78, 0.2); /*8 for horizontal offset, 5 for vertical offset, 3 for blur radius*/
+}
+
+.upcomingEvents
+{
+    border-radius: 5px;
+    padding: 15px;
+    width: 200px;
+    background-color: #98BDFF;
+    box-shadow: 8px 5px 3px rgba(78, 77, 78, 0.2); /*8 for horizontal offset, 5 for vertical offset, 3 for blur radius*/
+}
+
+.completedEvents
+{
+    border-radius: 5px;
+    padding: 15px;
+    width: 210px;
+    background-color: #98BDFF;
+    box-shadow: 8px 5px 3px rgba(78, 77, 78, 0.2); /*8 for horizontal offset, 5 for vertical offset, 3 for blur radius*/
+}
+
+.picAndTopic
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+}
+
+.eventTopic
+{
+    font-size: 18px;
+    color: #151269;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.eventAmount
+{
+    font-size: 40px;
+    color: #333333;
+    font-weight: bold;
+    text-align: center;
+    line-height: 0;
+}
+
+.bar
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 250px;
+    padding: 10px;
+    padding-bottom: 50px;
+    background-color: whitesmoke;
+    border-radius: 8px;
+    margin-left: 13px;
+    margin-right: 13px;
+}
+
+.axisAndBars
+{
+    display: flex;
+    flex-direction: row;
+}
+.yAxis 
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+    font-size: 16px;
+    width: 40px;
+    margin-right: 10px;
+    font-weight:300;
+}
+.barChart
+{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    width: 1100px;
+    height: 200px;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.month
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.twoBars
+{
+    display: flex;
+    flex-direction: row; 
+    align-items: flex-end;
+}
+
+.revenueJan
+{
+    background-color: #151269;
+    height: 190px;
+    width: 30px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.profitJan
+{
+    background-color: #81b1ce;
+    height: 40px;
+    width: 30px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.revenueFeb
+{
+    background-color: #151269;
+    height: 180px;
+    width: 30px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.profitFeb
+{
+    background-color: #81b1ce;
+    height: 100px;
+    width: 30px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.revenueMar
+{
+    background-color: #151269;
+    height: 90px;
+    width: 30px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.profitMar
+{
+    background-color: #81b1ce;
+    height: 50px;
+    width: 30px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.revenueApr
+{
+    background-color: #151269;
+    height: 166px;
+    width: 30px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.profitApr
+{
+    background-color: #81b1ce;
+    height: 110px;
+    width: 30px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.revenueMay
+{
+    background-color: #151269;
+    height: 40px;
+    width: 30px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.profitMay
+{
+    background-color: #81b1ce;
+    height: 20px;
+    width: 30px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.revenueJun
+{
+    background-color: #151269;
+    height: 40px;
+    width: 30px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.profitJun
+{
+    background-color: #81b1ce;
+    height: 20px;
+    width: 30px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.revenueBlue
+{
+    list-style-type: disc;
+    color: #151269;
+    font-weight: bold;
+}
+
+.profitRed
+{
+    list-style-type: disc;
+    color: #81b1ce;
+    font-weight: bold;
+}
+
+
+.monthNames
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 950px;
+    margin-right: 55px;
+    font-weight: bold;
+}
+
+.adminSection
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 1%;
+    padding: 20px;
+}
+
+.adminRow1
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.totalAdmins
+{
+    border-radius: 5px;
+    padding: 15px;
+    width: 250px;
+    height: 80px;
+    background-color: #F8F8F8;
+    box-shadow: 8px 5px 3px rgba(78, 77, 78, 0.2); /*8 for horizontal offset, 5 for vertical offset, 3 for blur radius*/
+}
+
+.adminPicAndTopic
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.adminTopic
+{
+    font-size: 20px;
+    color: #4B49AC;
+    font-weight: bold; 
+}
+
+.admin img
+{
+    border-radius: 50%; 
+    border-color: black; 
+    border-style:solid;
+    border-width: 2px;
+    height:70px; 
+    width:60px;
+}
+
+
+.adminRow2
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.admin
+{
+    border-radius: 5px;
+    padding: 15px;
+    width: 250px;
+    height: 80px;
+    box-shadow: 8px 5px 3px rgba(78, 77, 78, 0.2);
+    background-color: #F8F8F8;
+}
+
+.adminDetail
+{
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-around;
+    line-height: 0.3px;
+    font-size: 13px;
+    color: #333333;
+}
+.studentSection
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 1%;
+    
+}
+
+.totalStudents
+{
+    border-radius: 5px;
+    padding: 15px;
+    width: 200px;
+    background-color: #98BDFF;
+    box-shadow: 8px 5px 3px rgba(78, 77, 78, 0.2); /*8 for horizontal offset, 5 for vertical offset, 3 for blur radius*/
+}
+
+.studentAmount
+{
+    font-size: 40px;
+    color: #333333;
+    font-weight: bold;
+    text-align: center;
+    line-height: 0;
+}
+
+.pieChartCard
+{
+    border-radius: 5px;
+    padding: 15px;
+    width: 200px;
+    background-color: whitesmoke;
+    box-shadow: 8px 5px 3px rgba(78, 77, 78, 0.2); /*8 for horizontal offset, 5 for vertical offset, 3 for blur radius*/
+}
+
+.ratePie
+{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: conic-gradient(#113065 0% 65%, #b6b4f0 11% 100%);
+    margin-left: 45px;
+}
+
+.rateDetails
+{
+    font-size: 12px;
+    color: rgb(54, 52, 52);
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    line-height: 1px;
+}
+
+.pendingPie
+{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: conic-gradient(#b6b4f0 0% 5%, #113065 11% 100%);
+    margin-left: 45px;
+}
+
+
+/* --------------------------------------------------- manage events -------------------------------------------------- */
+
+#manageEventsSection
+{
+    display: none;
+}
+
+.addEventBtn
+{
+    margin-top: 5%;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: #151269;
+    border-style: none;
+    margin-left: 10px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+.addEventBtn:hover
+{
+    scale: 1.1;
+}
+
+#detailsForm
+{
+    position: fixed;
+    top: 30%;
+    left: 40%;
+    width: 250px;
+    display: none;
+    padding: 15px;
+    border-radius: 8px;
+    border-style: ridge;
+    border-color: #151269;
+    justify-content: center;
+    align-items: center;
+    background-color: #d7d6f5;
+    z-index: 1000;
+}
+
+#nameInput, #dateInput, #timeInput, #linkInput
+{
+    padding: 5px;
+    border-radius: 8px;
+    border-style: ridge;
+    border-color: #151269;
+    width: 230px;
+    background-color: white;
+}
+
+#nameInput:hover, #dateInput:hover, #timeInput:hover, #linkInput:hover
+{
+    background-color: #d7d6f5;
+}
+
+.saveButton
+{
+    border-radius: 8px;
+    padding: 5px;
+    border-style: none;
+    margin-left: 83%;
+    cursor: pointer;
+    background-color: #151269;
+    border-style: none;
+    color: white;
+}
+
+.saveButton:hover
+{
+    scale: 1.1;
+}
+
+.closeButton
+{
+    border-radius: 8px;
+    padding: 5px;
+    border-style: none;
+    margin-left: 90%;
+    cursor: pointer;
+    background-color: #151269;
+    border-style: none;
+    color: white;
+    width: 30px;
+}
+
+.closeButton:hover
+{
+    scale: 1.1;
+}
+
+/* ------------------------------------------------- styles to display events on newEvents page --------------------------------------- */
+
+.eventCard 
+{
+    border: 3px solid #124E66 ; /*OUTER BORDER*/
+    padding: 10px;
+    border-radius: 10px 50px 30px;
+    cursor: pointer;
+    background-color: whitesmoke;
+    height: 335px;
+}
+
+.eventCard:hover 
+{
+    background-color: rgb(235, 225, 225);
+}
+
+.image
+{
+    display: flex;
+    border: 1px dashed #124E66;
+    padding: 8px;
+    margin-bottom: 10px;
+    color: black;
+    height: 150px; 
+    width: 250px;
+    border-radius: 10px 60px 30px;
+    overflow: hidden;
+}
+
+.label
+{
+    font-weight: bold;
+    font-size: 15px;
+    color:black;
+    display: block;
+    border-bottom: 1px dashed black;
+    padding-bottom: 1px;
+    text-align: center;
+}
+
+/* ------------------------------------------------ styles to display events on newAdmin page --------------------------------------- */
+
+.eventCardColumn
+{
+  background-color: whitesmoke;
+  border-radius: 5px;
+  padding: 8px;
+  width: 97%;
+  height: 50px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.posterColumn
+{
+  width: 100px;
+  height: 50px;
+}
+
+.dltBtnColumn
+{
+  border-style: none;
+  cursor: pointer;
+}
+
+.dltBtnColumn:hover
+{
+  scale: 1.1;
+}
+
+.editBtnColumn
+{
+    border-style: none;
+    cursor: pointer;
+}
+
+
+.editBtnColumn:hover
+{
+    scale: 1.1;
+}
+/* --------------------------------------------------- manage students and admins -------------------------------------------------- */
+
+#manageStudentsSection, #manageAdminsSection
+{
+    display: none;
+}
+
+
+#searchAndFilter
+{
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between; 
+    width: 98%;
+}
+
+#formSearch
+{
+    background-color: white; 
+    color: #113065; 
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #113065; 
+    padding: 8px; 
+    width: 350px; 
+    margin-left: 5px;
+}
+
+#filter
+{
+    color: white; 
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between;
+}
+
+#filterSelect
+{
+    cursor: pointer; 
+    background-color: white; 
+    color: #113065; 
+    border-radius: 10px; 
+    border-style: solid; 
+    border-color: #113065;
+    font-weight: bold;
+    padding: 6px; 
+    cursor: pointer; 
+    margin-left: 7px;
+}
+
+#studentTable, #adminTable
+{
+    background-color: whitesmoke;  
+    border-radius: 10px; 
+    color: black; 
+    border-style: ridge;
+    font-weight:600; 
+    font-size: 15px;
+    border-collapse: separate;
+}
+
+#tableHeader
+{
+    padding: 20px; 
+    border-right: 2px solid #113065; 
+    border-bottom: 2px solid #113065;
+    background-color: #b6b4f0;
+}
+
+#tableRow
+{
+    padding: 15px; 
+    border-right: 2px solid #113065; 
+    border-bottom: 2px solid #113065;
+    text-align: center;
+}
+
+#actionPic
+{
+    width: 20px; 
+    height: 20px; 
+   
+}
+#actionPic:hover
+{
+    scale: 1.1;
+    transition: 0.3s ease;
+}
+
+
+/* --------------------------------------------------- manage notification -------------------------------------------------- */
+
+#manageNotificationSection
+{
+    display: none;
+}
+
+#notificationDiv
+{
+    background-color: whitesmoke;
+    width: 90%;
+    padding: 3px;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    border-radius: 8px;
+    line-height: 1px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+#notificationContent
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+#notificationMessage
+{
+    color: #333333;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#notificationTimeAndDate
+{
+    color: grey;
+    font-size: 12px;
+}
+#notificationDelete
+{
+    margin-left: 97%;
+    cursor: pointer;
+}
+
+#notificationDelete:hover
+{
+    scale: 1.1;
+}
+
+/* --------------------------------------------------- admin profile -------------------------------------------------- */
+
+#adminProfile
+{
+    display: none;
+    margin-top: 100px;
+}
+
+/* --------------------------------------------------- payments -------------------------------------------------- */
+
+#paymentSection
+{
+    display: none;
+}
+
+#mainPaymentDiv1, #mainPaymentDiv2, #mainPaymentDiv3, #mainPaymentDiv4, #mainPaymentDiv5
+{
+	background-color: whitesmoke;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 10px 30px 1px 10px;
+    width: 85%;
+    margin-left: 5%;
+}
+
+#subEventDiv1, #subEventDiv2, #subEventDiv3, #subEventDiv4, #subEventDiv5
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#poster
+{
+	width: 120px;
+	height: 65px;
+	border-radius: 10px;
+
+}
+
+#viewRecord1, #viewRecord2, #viewRecord3, #viewRecord4, #viewRecord5
+{
+	text-decoration: underline;
+	border: none;
+	background-color: whitesmoke;
+	color: blue;
+	cursor: pointer;
+}
+
+#viewRecord1:hover, #viewRecord2:hover, #viewRecord3:hover, #viewRecord4:hover, #viewRecord5:hover
+{
+	scale: 1.04;
+	transition: 0.3s ease;;
+}
+
+#subPaymentDiv1, #subPaymentDiv2, #subPaymentDiv3, #subPaymentDiv4, #subPaymentDiv5
+{
+	background-color: whitesmoke;
+    border-radius: 10px;
+    transition: max-height 0.5s ease, opacity 0.3s ease;
+    max-height: 0;
+    opacity: 0;
+    margin-bottom: 5px;
+    width: 860px;
+    margin-left: 15%;
+}
+
+#subPaymentDiv1.show , #subPaymentDiv2.show, #subPaymentDiv3.show, #subPaymentDiv4.show, #subPaymentDiv5.show
+{
+  max-height: 1000px;
+  opacity: 1;
+}
+
+
+#recordTable
+{
+	border-radius: 10px;
+}
+#tableRow
+{
+	text-align: center;
+}
+
+#tableRow th,td
+{
+	padding: 8px;
+}
+
+#paymentTableRow th,td
+{
+	border-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #113065;
+	border-right-style: solid;
+	border-right-color: #113065;
+}
+
+#tablePaymentHeader
+{
+    background-color: #b6b4f0;
+    border-right: none !important;
+}
+
+#trans
+{
+    border-right: none !important;
+}
