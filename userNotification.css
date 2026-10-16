@@ -1,0 +1,63 @@
+#totalNotifications
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+}
+
+#filterSelect
+{
+    cursor: pointer;
+    border-radius: 8px; 
+    padding: 5px; 
+    border-style: solid; 
+    color: #151269; 
+    background-color: white; 
+    border-width: 1px;
+}
+
+#notificationDiv
+{
+    background-color: whitesmoke;
+    width: 90%;
+    padding: 3px;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    border-radius: 8px;
+    line-height: 1px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+#notificationContent
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+#notificationMessage
+{
+    color: #333333;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#notificationTimeAndDate
+{
+    color: grey;
+    font-size: 12px;
+}
+#notificationDelete
+{
+    margin-left: 97%;
+    cursor: pointer;
+}
+
+#notificationDelete:hover
+{
+    scale: 1.1;
+}

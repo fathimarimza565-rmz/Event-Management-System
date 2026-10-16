@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Events Page - Event Management System </title>
+
+    <link rel="stylesheet" href="navAndFooter.css">
+    <script src="navBar.js"></script>
+	<link rel="stylesheet" href="newAdmin.css">
+	
+</head>
+
+<body>
+
+	<div id="navbar"> <!--navbar-->
+        <div class="logo"> <!--div for logo inside navbar -->
+            <img src="logo.png" class="logo">
+        </div>
+
+        <div class="collegeName">
+			COLLEGE OF TECHNOLOGY
+		</div>
+
+        <div class="Menu"> <!--div for menu inside navbar -->
+            <img src="menu2.png"  id="menu" onclick="navDropDown()" height="30px" width="25px" title="Menu" class="menuIcon ">           
+        </div>
+	</div>
+
+    <br>
+
+    <div id="dropdown"> <!--div for nav dropdown-->
+
+        <ul id="dropdownList">
+            <li> <a href="newHome.html"> <img src="home.png" height="15px" width="15px"> HOME </a> </li> <br> 
+            <li> <a href="newEvents.html"> <img src="grid.png" height="15px" width="15px"> EVENTS </a></li><br>
+            <li> <a href="newGallery.html"> <img src="gallery.png" height="15px" width="15px"> GALLERY </a></li><br>
+            <li> <a href="newStudent.html" > <img src="user.png" height="15px" width="15px"> STUDENT PANEL▼</a> </li><br>
+            <li> <a href="newAdmin.html" > <img src="admin.png" height="15px" width="15px"> ADMIN PANEL▼</a></li>
+        </ul>
+    </div>
+
+    <a name="backToTop"></a>
+	<br><br><br><br>
+
+<!-- ------------------------------------ display events on the newEvents page ----------------------------------------------- -->
+
+	<div id="displayDiv" style=" display: flex; flex-direction: row; 
+	justify-content: space-between; flex-wrap: wrap; gap: 20px; 
+	margin-left: 20px; margin-right: 20px;"> </div>
+
+	<script type="text/javascript">
+	
+		window.onload=function()
+		{
+
+			let stored = localStorage.getItem('allDataLabel'); /*retrieve the data stored in localStorage under 
+			the label allDataLabel and store it in a variable */
+			let convertToArr=JSON.parse(stored); /*that retrieved data is in string format. 
+			Now convert it back to an ARRAY of objects */
+
+			/* forEach loops through EACH object in the array */
+			convertToArr.forEach (eventLoop=> 
+			{
+				let createDiv=document.createElement("div"); /* creates a new div for EACH event */
+				createDiv.classList.add("eventCard");
+
+				let eventLink = document.createElement("a");
+				eventLink.href = eventLoop.link;
+				eventLink.style.textDecoration='none';
+
+
+				let posterContainer=document.createElement('img'); 
+				posterContainer.src=eventLoop.poster;
+				createDiv.appendChild(posterContainer);
+				posterContainer.classList.add("image");
+				
+				let namePara=document.createElement('p'); /* creates a new paragraph for EACH event */
+				namePara.innerHTML="Name: " +  eventLoop.name + "<br><br>"; /* stores the user input of the name variable */
+				createDiv.appendChild(namePara); /* adding that name paragraph inside the above div 
+				appendChild is a method to add new element to another element */
+				namePara.classList.add("label");
+				
+				let datePara=document.createElement('p'); 
+				datePara.innerHTML="Date: " + eventLoop.date + "<br><br>";;
+				createDiv.appendChild(datePara);
+				datePara.classList.add("label");
+				
+				let timePara=document.createElement('p'); 
+				timePara.innerHTML="Time: " + eventLoop.time + "<br><br>";;
+				createDiv.appendChild(timePara);
+				timePara.classList.add("label");
+
+				eventLink.append(posterContainer, namePara, datePara, timePara); /* linking everything to the eventLink 
+				variable so the whole event container turns	clickable */
+				createDiv.appendChild(eventLink);
+				document.getElementById('displayDiv').appendChild(createDiv); /*finally adding the new div to the main div to display */
+			});
+		}
+	</script>
+	<br><br>
+	
+<!-- -------------------------------------------------------------------------------------------------------------------------------------- -->
+
+	<!--MAIN CONTAINER FOR THE FOOTER SO THAT THE SUB-CONTAINERS STAY IN A ROW-->
+
+	<div id="footer"> 
+
+		<div class="footer1"> <!--FOOTER SECTION 1-->
+
+			<img src="logo.png" style="width: 200px; height: 190px;">
+
+			<p class="copyright">
+			Copyright © 2025 College of Technology.</p>
+
+			<p class="copyright"> All rights reserved.</p>
+
+		</div>
+
+
+		<div class="footer2"> <!--FOOTER SECTION 2-->
+
+			<h3 class="footerHeadings"> Follow Us </h3>
+
+			<center>
+			<div class="footer2row"> <!--1ST ROW AND THERE'S SPACE BETWEEN ICONS-->
+
+				<a href="notification.html"> <!--INSTAGRAM-->
+					<img src="ig.png" title="instagram.com/collegeoftechnology" 
+                    style="width: 33px; height: 33px; border: none;">
+				</a>
+
+				<a href="notification.html"> <!--FACEBOOK-->
+					<img src="facebook.png" title="https://www.facebook.com/collegeoftechnology" 
+                    style="width: 30px; height: 30px; border: none;">
+				</a>
+
+			</div>
+			</center>
+
+			<br>
+
+			<center>
+			<div class="footer2row"> <!--2ND ROW AND THERE'S SPACE BETWEEN ICONS-->
+
+				<a href="notification.html"> <!--LINKEDIN-->
+					<img src="linkedin.png" title="https://www.linkedin.com/in/collegeoftechnology" 
+                    style="width: 30px; height: 30px; 
+					border: none;" />
+				</a>
+
+				<a href="notification.html"> <!--TWITTER-->
+					<img src="twitter.png" title="https://x.com/collegeoftechnology" 
+                    style="width: 30px; height: 30px; border: none;">
+				</a>
+					
+			</div>
+			</center>
+
+			<br>
+
+			<h3 class="footerHeadings"> Contact Number </h3>
+
+			<a href="tel:+94 76980 9566" 
+            style="font-size: 14px; color: #F8F8F8; text-decoration: none;"> +94 76980 9566
+			</a> <!--THIS PROTOCOL WILL OPEN THE DIALER ON THE PHONE AND CALL-->
+			
+			<br><br>
+				
+		</div>
+
+
+		<div class="footer3"> <!--FOOTER SECTION 3-->
+
+			<h3 class="footerHeadings"> Address </h3>
+
+			<p style="font-size: 14px;"> 80/6, Fernando Mawatha,</p>
+			<p style="font-size: 14px;"> Colombo, Sri Lanka</p>
+
+			<br>
+
+			<h3 class="footerHeadings"> Email </h3>
+
+			<a  href="mailto:universityoftokyo@gmail.com" style="font-size: 14px; color: #F8F8F8; text-decoration: none;">
+			collegeoftechnology@gmail.com</a> 
+            <!--THIS PROTOCOL WILL OPEN THE USER'S DEFAULT EMAIL WITH THE "TO" FIELD PREFILLED-->	
+		</div>
+
+
+		<div class="footer4"><!--FOOTER SECTION 4-->
+
+			
+			<h3 class="footerHeadings"> Legal </h3>
+
+				<a href="" style="font-size: 12px; color: #F8F8F8;"> Privacy Policy</a>
+				<br><br>
+				<a href="" style="font-size: 12px;color: #F8F8F8;"> Terms and Conditions</a>
+				<br><br><br><br><br><br>
+
+				<a class="top" href="#backToTop">
+					<img src="top.png" style="width: 30px; height: 30px; border: none; padding-left: 75%;">
+				</a>
+
+		</div> 
+        <br><br><br>
+
+	</div>
+
+
+
+</body>
+</html>

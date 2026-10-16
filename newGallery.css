@@ -1,0 +1,281 @@
+/* --------------------------------------------------- manage media -------------------------------------------------- */
+
+#manageMediaSection
+{
+    display: none;
+}
+
+.addMediaBtn
+{
+    margin-top: 5%;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: #151269;
+    border-style: none;
+    margin-left: 10px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+.addMediaBtn:hover
+{
+    scale: 1.1;
+}
+
+#mediaDetailsForm
+{
+    position: fixed;
+    top: 20%;
+    left: 40%;
+    width: 250px;
+    display: none;
+    padding: 15px;
+    border-radius: 8px;
+    border-style: ridge;
+    border-color: #151269;
+    justify-content: center;
+    align-items: center;
+    background-color: #d7d6f5;
+    z-index: 1000;
+}
+
+#mediaNameInput, #mediaDateInput, #mediaTimeInput, #mediaLinkInput, #mediaPosterInput
+{
+    padding: 5px;
+    border-radius: 8px;
+    border-style: ridge;
+    border-color: #151269;
+    width: 230px;
+    background-color: white;
+}
+
+#mediaNameInput:hover, #mediaDateInput:hover, #mediaTimeInput:hover, #mediaLinkInput:hover, #mediaPosterInput:hover
+{
+    background-color: #d7d6f5;
+}
+
+.mediaSaveButton
+{
+    border-radius: 8px;
+    padding: 5px;
+    border-style: none;
+    margin-left: 83%;
+    cursor: pointer;
+    background-color: #151269;
+    border-style: none;
+    color: white;
+}
+
+.mediaSaveButton:hover
+{
+    scale: 1.1;
+}
+
+.mediaCloseButton
+{
+    border-radius: 8px;
+    padding: 5px;
+    border-style: none;
+    margin-left: 90%;
+    cursor: pointer;
+    background-color: #151269;
+    border-style: none;
+    color: white;
+    width: 30px;
+}
+
+.mediaCloseButton:hover
+{
+    scale: 1.1;
+}
+
+/* ------------------------------------------------- styles to display MEDIA on newGallery page --------------------------------------- */
+
+.mediaEventCard 
+{
+    padding: 10px;
+    background-color: red;
+    height: auto;
+    width: 350px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); 
+    -webkit-backdrop-filter: blur(20px); 
+    backdrop-filter: blur(20px); 
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); 
+    border: 1px solid rgba(255, 255, 255, 0.18); 
+    border-radius: 10px;
+}
+
+.mediaEventCard:hover 
+{
+    transition: transform 0.6s;
+    transform: scale(1.04);
+}
+
+.mediaImage
+{
+    display: flex;
+    color: black;
+    height: 230px; 
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.overlay
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.viewBtnStyle
+{
+    background-color: #151269;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.mediaEventCard:hover .overlay
+{
+    opacity: 1;
+}
+
+/* ------------------------------------------------ styles to display MEDIA on newAdmin page --------------------------------------- */
+
+#manageMediaSection
+{
+    display: none;
+}
+
+.mediaEventCardColumn
+{
+  background-color: whitesmoke;
+  border-radius: 5px;
+  padding: 8px;
+  width: 97%;
+  height: 50px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.mediaPosterColumn
+{
+  width: 100px;
+  height: 50px;
+}
+
+.mediah5
+{
+    font-weight: bold;
+    font-size: 15px;
+    color:black;
+    display: block;
+    padding-bottom: 1px;
+    text-align: center;
+}
+
+.mediaDltBtnColumn
+{
+  border-style: none;
+  cursor: pointer;
+}
+
+.mediaDltBtnColumn:hover
+{
+  scale: 1.1;
+}
+
+.mediaEditBtnColumn
+{
+    border-style: none;
+    cursor: pointer;
+}
+
+
+.mediaEditBtnColumn:hover
+{
+    scale: 1.1;
+}
+
+
+
+/* Main Content */
+main {
+    margin-top: 80px;
+    padding: 2rem 1rem;
+    flex-grow: 1;
+}
+
+.gallery-section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1,
+h2 {
+    text-align: center;
+    color: #124E66;
+    margin-bottom: 1rem;
+}
+
+.section-description {
+    text-align: center;
+    max-width: 80%;
+    margin: 0 auto 2rem;
+    color: #666;
+}
+
+.featured-gallery,
+.gallery-grid {
+    margin-bottom: 3rem;
+}
+
+
+/* Scrollable Gallery */
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 1rem 0.5rem;
+    gap: 1rem;
+    background: linear-gradient(135deg, var(--light-bg), rgba(255, 255, 255, 0));
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: #45b6fe var(--light-bg);
+}
+
+.scroll-container img {
+    scroll-snap-align: center;
+    flex: 0 0 auto;
+    width: 280px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.scroll-container img:hover 
+{
+    transition: transform 0.6s;
+    transform: scale(1.06);
+}
